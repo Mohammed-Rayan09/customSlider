@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Slider</title>
+</head>
+
+<body>
+
+    <header>
+        <a href="#" class="logo">Products.</a>
+
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Store</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+
+    <!-- Banner Section -->
+
+    <section class="banner">
+        <div class="imgBox">
+            <img src="./img/img1.jpg" alt="" class="active">
+            <img src="./img/img2.jpg" alt="">
+            <img src="./img/img3.jpg" alt="">
+            <img src="./img/img4.jpg" alt="">
+        </div>
+
+        <div class="content">
+            <div class="active">
+                <h2>Slide Text One</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quam velit omnis alias unde temporibus ut accusantium distinctio nihil veniam!</p>
+                <a href="#">Details</a>
+            </div>
+
+            <div>
+                <h2>Slide Text Two</h2>
+                <p>t accusantium  ipsum dolor sit amet Lorem  velit omnis alias unde temporibus u consectetur adipisicing elit. Delectus quamdistinctio nihil veniam!</p>
+                <a href="#">Details</a>
+            </div>
+
+            <div>
+                <h2>Slide Text Three</h2>
+                <p>Delectus quam velit omnis alias unde temporibus ut Lorem ipsum dolor sit amet consectetur adipisicing elit.  accusantium distinctio nihil veniam!</p>
+                <a href="#">Details</a>
+            </div>
+
+            <div>
+                <h2>Slide Text Four</h2>
+                <p>unde temporibus ut accusantium distinctio nihil veniam!Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus quam velit omnis alias </p>
+                <a href="#">Details</a>
+            </div>
+        </div>
+
+        <ul class="controls">
+            <li onclick="PrevSlide();PrevSlideText()"></li>
+            <li onclick="nextSlide();nextSlideText()"></li>
+        </ul>
+    </section>
+
+
+    <script type="text/javascript">
+        const imgBox = document.querySelector('.imgBox');
+
+        const slides = imgBox.getElementsByTagName('img');
+
+        var i = 0;
+
+        function nextSlide(){
+            slides[i].classList.remove('active');
+
+            i = (i + 1 ) % slides.length;
+
+
+            slides[i].classList.add('active');
+        }
+
+        function PrevSlide(){
+            slides[i].classList.remove('active');
+
+            i = (i - 1 +slides.length) % slides.length;
+
+
+            slides[i].classList.add('active');
+        }
+
+
+        const content = document.querySelector('.content');
+
+        const slidesText = content.getElementsByTagName('div');
+
+        var j = 0;
+
+        function nextSlideText(){
+            slidesText[j].classList.remove('active');
+
+            j = (j + 1 ) % slidesText.length;
+
+
+            slidesText[j].classList.add('active');
+        }
+
+        function PrevSlideText(){
+            slidesText[j].classList.remove('active');
+
+            j = (j - 1 + slidesText.length) % slidesText.length;
+
+
+            slidesText[j].classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
